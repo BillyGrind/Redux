@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import './Compteur.css';
 import Resultat from '../Composants/Resultat/Resultat.js';
 import IncrBtn from '../Composants/IncrBtn/IncrBtn.js';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 class Compteur extends Component {
 
@@ -12,17 +12,17 @@ class Compteur extends Component {
         compteur: 0
     }
 
-    // calcul = (action) => {
+    calcul = (action) => {
 
-    //     if (action === "plus1") {
-    //         this.setState((statePrec) => { return { compteur: statePrec.compteur + 1 } })
-    //     }
-    //     if (action === "moins1") {
-    //         this.setState((statePrec) => { return { compteur: statePrec.compteur - 1 } })
-    //     }
+        if (action === "plus1") {
+            this.setState((statePrec) => { return { compteur: statePrec.compteur + 1 } })
+        }
+        if (action === "moins1") {
+            this.setState((statePrec) => { return { compteur: statePrec.compteur - 1 } })
+        }
 
 
-    // }
+    }
 
 
     render() {
@@ -32,8 +32,8 @@ class Compteur extends Component {
                     <Resultat valeur={this.props.ctr} />
                 </div>
                 <div className="contBtn">
-                    <IncrBtn txt="Incremente" clicked={() => this.props.incremente} />
-                    <IncrBtn txt="Decremente" clicked={() => this.props.decremente} />
+                    <IncrBtn txt="Incremente" clicked={this.props.incremente} />
+                    <IncrBtn txt="Decremente" clicked={this.props.decremente} />
                 </div>
             </div>
         )
